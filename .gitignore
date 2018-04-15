@@ -1,2 +1,5 @@
 #output files
 a.out
+
+#text editor files
+.vscode/
