@@ -70,34 +70,35 @@ class EXPRESSION{
 
 void EXPRESSION::get_infix(void){
     cout<<"Enter a valid infix expression: ";
-    cin>>infix;
-    cout<<"got the exp!"<<endl;
-}
+    cin.getlineinfix;
+    cout<<"got 
+    the exp!"<<endl;
+    return;
+}   
 
 void EXPRESSION::convert_to_postfix(void){
     cout<<"Entered conversion";
     char cToken,ch;
     int i=0,j=0;
-    cout<<"Now converting...";
-    while((cToken=infix[i])!='\0'){
+    while((cToken=infix[i]) && i<infix.length()){
         if(isalnum(cToken))
-            postfix[j++]=cToken;
+            postfix+=cToken;
         else if(cToken=='(')
             s.push(cToken);
         else if(cToken==')'){
             while((ch=s.pop()!='('))
-                postfix[j++]=ch;
+                postfix+=ch;
         }
         else{
             while(s.is_alive() && preced(s.peek()>=preced(cToken))){
                 ch=s.pop();
-                postfix[j++]=ch;
+                postfix+=ch;
             }
             s.push(cToken);
         }
     }
     while(s.is_alive()){
-        postfix[j++]=s.pop();
+        postfix+=s.pop();
     }
 }
 
@@ -109,7 +110,7 @@ int main(){
     EXPRESSION e;
     string a;
     e.get_infix();
-    cout<<"BACK IN MAIN"<<endl;
+    cout<<"NOW WILL ENTER CONV";
     e.convert_to_postfix();
     a=e.display_postfix();
     cout<<"Postfix expression is : "<<a<<endl;

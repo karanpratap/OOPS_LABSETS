@@ -1,3 +1,8 @@
+/*
+Write a C++ program to create a template functions for Insertion sort and Selection Sort. Demonstrate
+sorting of integers and double data types for both sorting algorithms.
+*/
+
 #include "iostream"
 const int SIZE=5;
 

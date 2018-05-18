@@ -3,3 +3,6 @@ a.out
 
 #text editor files
 .vscode/
+
+#text files
+*.txt
